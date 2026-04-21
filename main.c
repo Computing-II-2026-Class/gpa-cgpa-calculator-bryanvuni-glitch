@@ -182,6 +182,18 @@ int main(void) {
     printf("\nSemester I GPA: %.2f\n", sem1_gpa);
     printf("Semester II GPA: %.2f\n", sem2_gpa);
     printf("CGPA: %.2f\n", cgpa);
+
+    if (cgpa >= 4.40) {
+        printf("Classification: First Class\n");
+    } else if (cgpa >= 3.60) {
+        printf("Classification: Second Class Upper\n");
+    } else if (cgpa >= 2.80) {
+        printf("Classification: Second Class Lower\n");
+    } else if (cgpa >= 2.00) {
+        printf("Classification: Pass\n");
+    } else {
+        printf("Classification: Fail\n");
+    }
     
     printf("\nCOURSE\tSCORE\tGRADE\tGP\tCU\tWEIGHTED\n");
     printf("TEMB1101\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_1, g1_1, gp1_1, c1_1, gp1_1*c1_1);

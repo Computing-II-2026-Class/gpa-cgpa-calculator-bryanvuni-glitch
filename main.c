@@ -176,19 +176,13 @@ int main(void) {
    
 
     /* Determine classification */
-    if (cgpa >= 4.40) {
-        printf("Classification: First Class\n");
-    } else if (cgpa >= 3.60) {
-        printf("Classification: Second Class Upper\n");
-    } else if (cgpa >= 2.80) {
-        printf("Classification: Second Class Lower\n");
-    } else if (cgpa >= 2.00) {
-        printf("Classification: Pass\n");
-    } else {
-        printf("Classification: Fail\n");
-    }
+    
 
     /* Display full academic report */
+    printf("\nSemester I GPA: %.2f\n", sem1_gpa);
+    printf("Semester II GPA: %.2f\n", sem2_gpa);
+    printf("CGPA: %.2f\n", cgpa);
+    
     printf("\nCOURSE\tSCORE\tGRADE\tGP\tCU\tWEIGHTED\n");
     printf("TEMB1101\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_1, g1_1, gp1_1, c1_1, gp1_1*c1_1);
     printf("TEMB1102\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_2, g1_2, gp1_2, c1_2, gp1_2*c1_2);
@@ -209,9 +203,7 @@ int main(void) {
     printf("TEMB1208\t%d\t%c\t%.1f\t%d\t%.1f\n", s2_8, g2_8, gp2_8, c2_8, gp2_8*c2_8);
 
     // this is the required summary outpu
-    printf("\nSemester I GPA: %.2f\n", sem1_gpa);
-    printf("Semester II GPA: %.2f\n", sem2_gpa);
-    printf("CGPA: %.2f\n", cgpa);
+    
 
     return 0;
 }

@@ -162,16 +162,56 @@ int main(void) {
     else { gp2_8 = 0.0; g2_8 = 'F'; }
 
     /* Determine grades and grade points */
+    double w1 = (gp1_1*c1_1) + (gp1_2*c1_2) + (gp1_3*c1_3) + (gp1_4*c1_4) + (gp1_5*c1_5) + (gp1_6*c1_6) + (gp1_7*c1_7) + (gp1_8*c1_8);
+    int tc1 = c1_1 + c1_2 + c1_3 + c1_4 + c1_5 + c1_6 + c1_7 + c1_8;
+    double sem1_gpa = w1 / tc1;
 
-    /* Compute Semester I GPA */
+    double w2 = (gp2_1*c2_1) + (gp2_2*c2_2) + (gp2_3*c2_3) + (gp2_4*c2_4) + (gp2_5*c2_5) + (gp2_6*c2_6) + (gp2_7*c2_7) + (gp2_8*c2_8);
+    int tc2 = c2_1 + c2_2 + c2_3 + c2_4 + c2_5 + c2_6 + c2_7 + c2_8;
+    double sem2_gpa = w2 / tc2;
 
-    /* Compute Semester II GPA */
+    double cgpa = (w1 + w2) / (tc1 + tc2);
 
-    /* Compute CGPA */
+
+   
 
     /* Determine classification */
+    if (cgpa >= 4.40) {
+        printf("Classification: First Class\n");
+    } else if (cgpa >= 3.60) {
+        printf("Classification: Second Class Upper\n");
+    } else if (cgpa >= 2.80) {
+        printf("Classification: Second Class Lower\n");
+    } else if (cgpa >= 2.00) {
+        printf("Classification: Pass\n");
+    } else {
+        printf("Classification: Fail\n");
+    }
 
     /* Display full academic report */
+    printf("\nCOURSE\tSCORE\tGRADE\tGP\tCU\tWEIGHTED\n");
+    printf("TEMB1101\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_1, g1_1, gp1_1, c1_1, gp1_1*c1_1);
+    printf("TEMB1102\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_2, g1_2, gp1_2, c1_2, gp1_2*c1_2);
+    printf("TEMB1103\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_3, g1_3, gp1_3, c1_3, gp1_3*c1_3);
+    printf("TEMB1104\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_4, g1_4, gp1_4, c1_4, gp1_4*c1_4);
+    printf("TEMB1105\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_5, g1_5, gp1_5, c1_5, gp1_5*c1_5);
+    printf("TEMB1106\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_6, g1_6, gp1_6, c1_6, gp1_6*c1_6);
+    printf("TEMB1107\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_7, g1_7, gp1_7, c1_7, gp1_7*c1_7);
+    printf("TEMB1108\t%d\t%c\t%.1f\t%d\t%.1f\n", s1_8, g1_8, gp1_8, c1_8, gp1_8*c1_8);
+
+    printf("TEMB1201\t%d\t%c\t%.1f\t%d\t%.1f\n", s2_1, g2_1, gp2_1, c2_1, gp2_1*c2_1);
+    printf("TEMB1202\t%d\t%c\t%.1f\t%d\t%.1f\n", s2_2, g2_2, gp2_2, c2_2, gp2_2*c2_2);
+    printf("TEMB1203\t%d\t%c\t%.1f\t%d\t%.1f\n", s2_3, g2_3, gp2_3, c2_3, gp2_3*c2_3);
+    printf("TEMB1204\t%d\t%c\t%.1f\t%d\t%.1f\n", s2_4, g2_4, gp2_4, c2_4, gp2_4*c2_4);
+    printf("TEMB1205\t%d\t%c\t%.1f\t%d\t%.1f\n", s2_5, g2_5, gp2_5, c2_5, gp2_5*c2_5);
+    printf("TEMB1206\t%d\t%c\t%.1f\t%d\t%.1f\n", s2_6, g2_6, gp2_6, c2_6, gp2_6*c2_6);
+    printf("TEMB1207\t%d\t%c\t%.1f\t%d\t%.1f\n", s2_7, g2_7, gp2_7, c2_7, gp2_7*c2_7);
+    printf("TEMB1208\t%d\t%c\t%.1f\t%d\t%.1f\n", s2_8, g2_8, gp2_8, c2_8, gp2_8*c2_8);
+
+    // this is the required summary outpu
+    printf("\nSemester I GPA: %.2f\n", sem1_gpa);
+    printf("Semester II GPA: %.2f\n", sem2_gpa);
+    printf("CGPA: %.2f\n", cgpa);
 
     return 0;
 }
